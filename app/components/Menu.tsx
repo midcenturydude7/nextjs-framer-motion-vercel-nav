@@ -237,15 +237,15 @@ const Blog = () => {
     <div>
       <div className="grid grid-cols-2 gap-2">
         <Link href="#">
-          <h4>Lorem ipsum dolor</h4>
-          <p>
+          <h4 className="mb-0.5 text-sm font-medium">Lorem ipsum dolor</h4>
+          <p className="text-xs text-neutral-400">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet illo
             quidem eos.
           </p>
         </Link>
         <Link href="#">
-          <h4>Lorem ipsum dolor</h4>
-          <p>
+          <h4 className="mb-0.5 text-sm font-medium">Lorem ipsum dolor</h4>
+          <p className="text-xs text-neutral-400">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet illo
             quidem eos.
           </p>
