@@ -137,23 +137,23 @@ const Nub = ({ selected }: { selected: number | null }) => {
   const [left, setLeft] = React.useState(0);
 
   React.useEffect(() => {
+    const moveNub = () => {
+      if (selected) {
+        const hoveredTab = document.getElementById(`shift-tab-${selected}`);
+        const overlayContent = document.getElementById("overlay-content");
+
+        if (!hoveredTab || !overlayContent) return;
+
+        const tabRect = hoveredTab.getBoundingClientRect();
+        const { left: contentLeft } = overlayContent.getBoundingClientRect();
+
+        const tabCenter = tabRect.left + tabRect.width / 2 - contentLeft;
+        setLeft(tabCenter);
+      }
+    };
+
     moveNub();
   }, [selected]);
-
-  const moveNub = () => {
-    if (selected) {
-      const hoveredTab = document.getElementById(`shift-tab-${selected}`);
-      const overlayContent = document.getElementById("overlay-content");
-
-      if (!hoveredTab || !overlayContent) return;
-
-      const tabRect = hoveredTab.getBoundingClientRect();
-      const { left: contentLeft } = overlayContent.getBoundingClientRect();
-
-      const tabCenter = tabRect.left + tabRect.width / 2 - contentLeft;
-      setLeft(tabCenter);
-    }
-  };
 
   return (
     <motion.span
