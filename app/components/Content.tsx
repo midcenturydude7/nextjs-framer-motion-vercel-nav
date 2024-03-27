@@ -26,10 +26,10 @@ export default function Content({
       <Bridge />
       <Nub selected={selected} />
 
-      {TABS.map((t) => {
+      {TABS.map(({ id, Component }) => {
         return (
-          <div className="overflow-hidden" key={t.id}>
-            {selected === t.id && (
+          <div className="overflow-hidden" key={id}>
+            {selected === id && (
               <motion.div
                 initial={{
                   opacity: 0,
@@ -38,7 +38,7 @@ export default function Content({
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.25, ease: "easeInOut" }}
               >
-                <t.Component />
+                <Component />
               </motion.div>
             )}
           </div>

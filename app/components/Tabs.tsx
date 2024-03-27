@@ -26,15 +26,15 @@ export default function Tabs() {
       onMouseLeave={() => handleSetSelected(null)}
       className="relative flex h-fit gap-2"
     >
-      {TABS.map((t) => {
+      {TABS.map(({ title, id }) => {
         return (
           <Tab
-            key={t.id}
+            key={id}
             selected={selected}
             handleSetSelected={handleSetSelected}
-            tab={t.id}
+            tab={id}
           >
-            {t.title}
+            {title}
           </Tab>
         );
       })}
